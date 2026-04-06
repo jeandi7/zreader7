@@ -1,0 +1,11 @@
+@startuml zschema7
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"resource")
+Business_Object(r1,"viewer") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Rel_Access_w(r1,b1,"ALL")
+@enduml

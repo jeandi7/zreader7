@@ -1,0 +1,13 @@
+definition platform {
+	relation administrator: user
+}
+
+definition organization {
+	relation platform: platform
+}
+
+definition resource {
+	relation owner: user | organization
+}
+
+definition user {}

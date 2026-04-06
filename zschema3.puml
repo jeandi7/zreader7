@@ -1,0 +1,25 @@
+@startuml zschema3
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"document")
+Business_Object(b3,"group")
+Business_Object(r1,"reader") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Business_Object(r2,"member") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b1)
+rectangle "relation member is duplicated in definition document " #red
+Business_Object(r4,"member") <<relation>>
+Rel_Association(b3,r4)
+Rel_Access_w(r4,b1)
+rectangle " group is declared more that one in relation member of definition group" #red 
+Business_Object(r5,"member2") <<relation>>
+Rel_Association(b3,r5)
+Rel_Access_w(r5,b1)
+rectangle " group is declared more that one in relation member2 of definition group" #red 
+Rel_Access_w(r4,r1,"group#member")
+rectangle "  group#member declared more that one in relation reader of definition document "  #red
+@enduml

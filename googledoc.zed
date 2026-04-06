@@ -1,0 +1,22 @@
+definition user {}
+
+definition guest {}
+
+definition resource {
+    relation manager: user | usergroup#manager
+    relation viewer: user | guest
+}
+
+definition usergroup {
+    relation manager: user 
+    relation direct_member: user 
+
+}
+
+definition organization {
+    relation group: usergroup
+    relation administrator: user 
+    relation direct_member: user
+    relation resource: resource
+
+}

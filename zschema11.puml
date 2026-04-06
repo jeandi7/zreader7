@@ -1,0 +1,847 @@
+@startuml zschema11
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"role")
+Business_Object(b3,"project")
+Business_Object(b4,"spanner_instance")
+Business_Object(b5,"spanner_database")
+Business_Object(r1,"bound_user") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Business_Object(r2,"spanner_databaseoperations_cancel") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b2)
+Business_Object(r3,"spanner_databaseoperations_delete") <<relation>>
+Rel_Association(b2,r3)
+Rel_Access_w(r3,b2)
+Business_Object(r4,"spanner_databaseoperations_get") <<relation>>
+Rel_Association(b2,r4)
+Rel_Access_w(r4,b2)
+Business_Object(r5,"spanner_databaseoperations_list") <<relation>>
+Rel_Association(b2,r5)
+Rel_Access_w(r5,b2)
+Business_Object(r6,"spanner_databaseroles_list") <<relation>>
+Rel_Association(b2,r6)
+Rel_Access_w(r6,b2)
+Business_Object(r7,"spanner_databaseroles_use") <<relation>>
+Rel_Association(b2,r7)
+Rel_Access_w(r7,b2)
+Business_Object(r8,"spanner_databases_beginorrollbackreadwritetransaction") <<relation>>
+Rel_Association(b2,r8)
+Rel_Access_w(r8,b2)
+Business_Object(r9,"spanner_databases_beginpartitioneddmltransaction") <<relation>>
+Rel_Association(b2,r9)
+Rel_Access_w(r9,b2)
+Business_Object(r10,"spanner_databases_beginreadonlytransaction") <<relation>>
+Rel_Association(b2,r10)
+Rel_Access_w(r10,b2)
+Business_Object(r11,"spanner_databases_create") <<relation>>
+Rel_Association(b2,r11)
+Rel_Access_w(r11,b2)
+Business_Object(r12,"spanner_databases_drop") <<relation>>
+Rel_Association(b2,r12)
+Rel_Access_w(r12,b2)
+Business_Object(r13,"spanner_databases_get") <<relation>>
+Rel_Association(b2,r13)
+Rel_Access_w(r13,b2)
+Business_Object(r14,"spanner_databases_getddl") <<relation>>
+Rel_Association(b2,r14)
+Rel_Access_w(r14,b2)
+Business_Object(r15,"spanner_databases_getiampolicy") <<relation>>
+Rel_Association(b2,r15)
+Rel_Access_w(r15,b2)
+Business_Object(r16,"spanner_databases_list") <<relation>>
+Rel_Association(b2,r16)
+Rel_Access_w(r16,b2)
+Business_Object(r17,"spanner_databases_partitionquery") <<relation>>
+Rel_Association(b2,r17)
+Rel_Access_w(r17,b2)
+Business_Object(r18,"spanner_databases_partitionread") <<relation>>
+Rel_Association(b2,r18)
+Rel_Access_w(r18,b2)
+Business_Object(r19,"spanner_databases_read") <<relation>>
+Rel_Association(b2,r19)
+Rel_Access_w(r19,b2)
+Business_Object(r20,"spanner_databases_select") <<relation>>
+Rel_Association(b2,r20)
+Rel_Access_w(r20,b2)
+Business_Object(r21,"spanner_databases_setiampolicy") <<relation>>
+Rel_Association(b2,r21)
+Rel_Access_w(r21,b2)
+Business_Object(r22,"spanner_databases_update") <<relation>>
+Rel_Association(b2,r22)
+Rel_Access_w(r22,b2)
+Business_Object(r23,"spanner_databases_updateddl") <<relation>>
+Rel_Association(b2,r23)
+Rel_Access_w(r23,b2)
+Business_Object(r24,"spanner_databases_userolebasedaccess") <<relation>>
+Rel_Association(b2,r24)
+Rel_Access_w(r24,b2)
+Business_Object(r25,"spanner_databases_write") <<relation>>
+Rel_Association(b2,r25)
+Rel_Access_w(r25,b2)
+Business_Object(r26,"spanner_instances_get") <<relation>>
+Rel_Association(b2,r26)
+Rel_Access_w(r26,b2)
+Business_Object(r27,"spanner_instances_getiampolicy") <<relation>>
+Rel_Association(b2,r27)
+Rel_Access_w(r27,b2)
+Business_Object(r28,"spanner_instances_list") <<relation>>
+Rel_Association(b2,r28)
+Rel_Access_w(r28,b2)
+Business_Object(r29,"spanner_sessions_create") <<relation>>
+Rel_Association(b2,r29)
+Rel_Access_w(r29,b2)
+Business_Object(r30,"spanner_sessions_delete") <<relation>>
+Rel_Association(b2,r30)
+Rel_Access_w(r30,b2)
+Business_Object(r31,"spanner_sessions_get") <<relation>>
+Rel_Association(b2,r31)
+Rel_Access_w(r31,b2)
+Business_Object(r32,"spanner_sessions_list") <<relation>>
+Rel_Association(b2,r32)
+Rel_Access_w(r32,b2)
+Business_Object(r33,"granted") <<relation>>
+Rel_Association(b3,r33)
+Rel_Access_w(r33,b2)
+Business_Object(r34,"project") <<relation>>
+Rel_Association(b4,r34)
+Rel_Access_w(r34,b3)
+Business_Object(r35,"granted") <<relation>>
+Rel_Association(b4,r35)
+Rel_Access_w(r35,b2)
+Business_Object(r36,"instance") <<relation>>
+Rel_Association(b5,r36)
+Rel_Access_w(r36,b4)
+Business_Object(r37,"granted") <<relation>>
+Rel_Association(b5,r37)
+Rel_Access_w(r37,b2)
+Application_Service(p1,"can_spanner_databaseoperations_cancel") <<permission>>
+Rel_Association(b2,p1)
+Business_Object(o1,"->") <<op>>
+Rel_Access_w(p1,o1)
+Rel_Access_w(o1,r2)
+Rel_Access_w(o1,r1)
+Application_Service(p2,"can_spanner_databaseoperations_delete") <<permission>>
+Rel_Association(b2,p2)
+Business_Object(o2,"->") <<op>>
+Rel_Access_w(p2,o2)
+Rel_Access_w(o2,r3)
+Rel_Access_w(o2,r1)
+Application_Service(p3,"can_spanner_databaseoperations_get") <<permission>>
+Rel_Association(b2,p3)
+Business_Object(o3,"->") <<op>>
+Rel_Access_w(p3,o3)
+Rel_Access_w(o3,r4)
+Rel_Access_w(o3,r1)
+Application_Service(p4,"can_spanner_databaseoperations_list") <<permission>>
+Rel_Association(b2,p4)
+Business_Object(o4,"->") <<op>>
+Rel_Access_w(p4,o4)
+Rel_Access_w(o4,r5)
+Rel_Access_w(o4,r1)
+Application_Service(p5,"can_spanner_databaseroles_list") <<permission>>
+Rel_Association(b2,p5)
+Business_Object(o5,"->") <<op>>
+Rel_Access_w(p5,o5)
+Rel_Access_w(o5,r6)
+Rel_Access_w(o5,r1)
+Application_Service(p6,"can_spanner_databaseroles_use") <<permission>>
+Rel_Association(b2,p6)
+Business_Object(o6,"->") <<op>>
+Rel_Access_w(p6,o6)
+Rel_Access_w(o6,r7)
+Rel_Access_w(o6,r1)
+Application_Service(p7,"can_spanner_databases_beginorrollbackreadwritetransaction") <<permission>>
+Rel_Association(b2,p7)
+Business_Object(o7,"->") <<op>>
+Rel_Access_w(p7,o7)
+Rel_Access_w(o7,r8)
+Rel_Access_w(o7,r1)
+Application_Service(p8,"can_spanner_databases_beginpartitioneddmltransaction") <<permission>>
+Rel_Association(b2,p8)
+Business_Object(o8,"->") <<op>>
+Rel_Access_w(p8,o8)
+Rel_Access_w(o8,r9)
+Rel_Access_w(o8,r1)
+Application_Service(p9,"can_spanner_databases_beginreadonlytransaction") <<permission>>
+Rel_Association(b2,p9)
+Business_Object(o9,"->") <<op>>
+Rel_Access_w(p9,o9)
+Rel_Access_w(o9,r10)
+Rel_Access_w(o9,r1)
+Application_Service(p10,"can_spanner_databases_create") <<permission>>
+Rel_Association(b2,p10)
+Business_Object(o10,"->") <<op>>
+Rel_Access_w(p10,o10)
+Rel_Access_w(o10,r11)
+Rel_Access_w(o10,r1)
+Application_Service(p11,"can_spanner_databases_drop") <<permission>>
+Rel_Association(b2,p11)
+Business_Object(o11,"->") <<op>>
+Rel_Access_w(p11,o11)
+Rel_Access_w(o11,r12)
+Rel_Access_w(o11,r1)
+Application_Service(p12,"can_spanner_databases_get") <<permission>>
+Rel_Association(b2,p12)
+Business_Object(o12,"->") <<op>>
+Rel_Access_w(p12,o12)
+Rel_Access_w(o12,r13)
+Rel_Access_w(o12,r1)
+Application_Service(p13,"can_spanner_databases_getddl") <<permission>>
+Rel_Association(b2,p13)
+Business_Object(o13,"->") <<op>>
+Rel_Access_w(p13,o13)
+Rel_Access_w(o13,r14)
+Rel_Access_w(o13,r1)
+Application_Service(p14,"can_spanner_databases_getiampolicy") <<permission>>
+Rel_Association(b2,p14)
+Business_Object(o14,"->") <<op>>
+Rel_Access_w(p14,o14)
+Rel_Access_w(o14,r15)
+Rel_Access_w(o14,r1)
+Application_Service(p15,"can_spanner_databases_list") <<permission>>
+Rel_Association(b2,p15)
+Business_Object(o15,"->") <<op>>
+Rel_Access_w(p15,o15)
+Rel_Access_w(o15,r16)
+Rel_Access_w(o15,r1)
+Application_Service(p16,"can_spanner_databases_partitionquery") <<permission>>
+Rel_Association(b2,p16)
+Business_Object(o16,"->") <<op>>
+Rel_Access_w(p16,o16)
+Rel_Access_w(o16,r17)
+Rel_Access_w(o16,r1)
+Application_Service(p17,"can_spanner_databases_partitionread") <<permission>>
+Rel_Association(b2,p17)
+Business_Object(o17,"->") <<op>>
+Rel_Access_w(p17,o17)
+Rel_Access_w(o17,r18)
+Rel_Access_w(o17,r1)
+Application_Service(p18,"can_spanner_databases_read") <<permission>>
+Rel_Association(b2,p18)
+Business_Object(o18,"->") <<op>>
+Rel_Access_w(p18,o18)
+Rel_Access_w(o18,r19)
+Rel_Access_w(o18,r1)
+Application_Service(p19,"can_spanner_databases_select") <<permission>>
+Rel_Association(b2,p19)
+Business_Object(o19,"->") <<op>>
+Rel_Access_w(p19,o19)
+Rel_Access_w(o19,r20)
+Rel_Access_w(o19,r1)
+Application_Service(p20,"can_spanner_databases_setiampolicy") <<permission>>
+Rel_Association(b2,p20)
+Business_Object(o20,"->") <<op>>
+Rel_Access_w(p20,o20)
+Rel_Access_w(o20,r21)
+Rel_Access_w(o20,r1)
+Application_Service(p21,"can_spanner_databases_update") <<permission>>
+Rel_Association(b2,p21)
+Business_Object(o21,"->") <<op>>
+Rel_Access_w(p21,o21)
+Rel_Access_w(o21,r22)
+Rel_Access_w(o21,r1)
+Application_Service(p22,"can_spanner_databases_updateddl") <<permission>>
+Rel_Association(b2,p22)
+Business_Object(o22,"->") <<op>>
+Rel_Access_w(p22,o22)
+Rel_Access_w(o22,r23)
+Rel_Access_w(o22,r1)
+Application_Service(p23,"can_spanner_databases_userolebasedaccess") <<permission>>
+Rel_Association(b2,p23)
+Business_Object(o23,"->") <<op>>
+Rel_Access_w(p23,o23)
+Rel_Access_w(o23,r24)
+Rel_Access_w(o23,r1)
+Application_Service(p24,"can_spanner_databases_write") <<permission>>
+Rel_Association(b2,p24)
+Business_Object(o24,"->") <<op>>
+Rel_Access_w(p24,o24)
+Rel_Access_w(o24,r25)
+Rel_Access_w(o24,r1)
+Application_Service(p25,"can_spanner_instances_get") <<permission>>
+Rel_Association(b2,p25)
+Business_Object(o25,"->") <<op>>
+Rel_Access_w(p25,o25)
+Rel_Access_w(o25,r26)
+Rel_Access_w(o25,r1)
+Application_Service(p26,"can_spanner_instances_getiampolicy") <<permission>>
+Rel_Association(b2,p26)
+Business_Object(o26,"->") <<op>>
+Rel_Access_w(p26,o26)
+Rel_Access_w(o26,r27)
+Rel_Access_w(o26,r1)
+Application_Service(p27,"can_spanner_instances_list") <<permission>>
+Rel_Association(b2,p27)
+Business_Object(o27,"->") <<op>>
+Rel_Access_w(p27,o27)
+Rel_Access_w(o27,r28)
+Rel_Access_w(o27,r1)
+Application_Service(p28,"can_spanner_sessions_create") <<permission>>
+Rel_Association(b2,p28)
+Business_Object(o28,"->") <<op>>
+Rel_Access_w(p28,o28)
+Rel_Access_w(o28,r29)
+Rel_Access_w(o28,r1)
+Application_Service(p29,"can_spanner_sessions_delete") <<permission>>
+Rel_Association(b2,p29)
+Business_Object(o29,"->") <<op>>
+Rel_Access_w(p29,o29)
+Rel_Access_w(o29,r30)
+Rel_Access_w(o29,r1)
+Application_Service(p30,"can_spanner_sessions_get") <<permission>>
+Rel_Association(b2,p30)
+Business_Object(o30,"->") <<op>>
+Rel_Access_w(p30,o30)
+Rel_Access_w(o30,r31)
+Rel_Access_w(o30,r1)
+Application_Service(p31,"can_spanner_sessions_list") <<permission>>
+Rel_Association(b2,p31)
+Business_Object(o31,"->") <<op>>
+Rel_Access_w(p31,o31)
+Rel_Access_w(o31,r32)
+Rel_Access_w(o31,r1)
+Application_Service(p32,"granted_spanner_instances_get") <<permission>>
+Rel_Association(b3,p32)
+Business_Object(o32,"->") <<op>>
+Rel_Access_w(p32,o32)
+Rel_Access_w(o32,r33)
+Rel_Access_w(o32,p25)
+Application_Service(p33,"granted_spanner_instances_getiampolicy") <<permission>>
+Rel_Association(b3,p33)
+Business_Object(o33,"->") <<op>>
+Rel_Access_w(p33,o33)
+Rel_Access_w(o33,r33)
+Rel_Access_w(o33,p26)
+Application_Service(p34,"granted_spanner_instances_list") <<permission>>
+Rel_Association(b3,p34)
+Business_Object(o34,"->") <<op>>
+Rel_Access_w(p34,o34)
+Rel_Access_w(o34,r33)
+Rel_Access_w(o34,p27)
+Application_Service(p35,"granted_spanner_databases_beginorrollbackreadwritetransaction") <<permission>>
+Rel_Association(b3,p35)
+Business_Object(o35,"->") <<op>>
+Rel_Access_w(p35,o35)
+Rel_Access_w(o35,r33)
+Rel_Access_w(o35,p7)
+Application_Service(p36,"granted_spanner_databases_beginpartitioneddmltransaction") <<permission>>
+Rel_Association(b3,p36)
+Business_Object(o36,"->") <<op>>
+Rel_Access_w(p36,o36)
+Rel_Access_w(o36,r33)
+Rel_Access_w(o36,p8)
+Application_Service(p37,"granted_spanner_databases_beginreadonlytransaction") <<permission>>
+Rel_Association(b3,p37)
+Business_Object(o37,"->") <<op>>
+Rel_Access_w(p37,o37)
+Rel_Access_w(o37,r33)
+Rel_Access_w(o37,p9)
+Application_Service(p38,"granted_spanner_databases_create") <<permission>>
+Rel_Association(b3,p38)
+Business_Object(o38,"->") <<op>>
+Rel_Access_w(p38,o38)
+Rel_Access_w(o38,r33)
+Rel_Access_w(o38,p10)
+Application_Service(p39,"granted_spanner_databases_drop") <<permission>>
+Rel_Association(b3,p39)
+Business_Object(o39,"->") <<op>>
+Rel_Access_w(p39,o39)
+Rel_Access_w(o39,r33)
+Rel_Access_w(o39,p11)
+Application_Service(p40,"granted_spanner_databases_get") <<permission>>
+Rel_Association(b3,p40)
+Business_Object(o40,"->") <<op>>
+Rel_Access_w(p40,o40)
+Rel_Access_w(o40,r33)
+Rel_Access_w(o40,p12)
+Application_Service(p41,"granted_spanner_databases_getddl") <<permission>>
+Rel_Association(b3,p41)
+Business_Object(o41,"->") <<op>>
+Rel_Access_w(p41,o41)
+Rel_Access_w(o41,r33)
+Rel_Access_w(o41,p13)
+Application_Service(p42,"granted_spanner_databases_getiampolicy") <<permission>>
+Rel_Association(b3,p42)
+Business_Object(o42,"->") <<op>>
+Rel_Access_w(p42,o42)
+Rel_Access_w(o42,r33)
+Rel_Access_w(o42,p14)
+Application_Service(p43,"granted_spanner_databases_list") <<permission>>
+Rel_Association(b3,p43)
+Business_Object(o43,"->") <<op>>
+Rel_Access_w(p43,o43)
+Rel_Access_w(o43,r33)
+Rel_Access_w(o43,p15)
+Application_Service(p44,"granted_spanner_databases_partitionquery") <<permission>>
+Rel_Association(b3,p44)
+Business_Object(o44,"->") <<op>>
+Rel_Access_w(p44,o44)
+Rel_Access_w(o44,r33)
+Rel_Access_w(o44,p16)
+Application_Service(p45,"granted_spanner_databases_partitionread") <<permission>>
+Rel_Association(b3,p45)
+Business_Object(o45,"->") <<op>>
+Rel_Access_w(p45,o45)
+Rel_Access_w(o45,r33)
+Rel_Access_w(o45,p17)
+Application_Service(p46,"granted_spanner_databases_read") <<permission>>
+Rel_Association(b3,p46)
+Business_Object(o46,"->") <<op>>
+Rel_Access_w(p46,o46)
+Rel_Access_w(o46,r33)
+Rel_Access_w(o46,p18)
+Application_Service(p47,"granted_spanner_databases_select") <<permission>>
+Rel_Association(b3,p47)
+Business_Object(o47,"->") <<op>>
+Rel_Access_w(p47,o47)
+Rel_Access_w(o47,r33)
+Rel_Access_w(o47,p19)
+Application_Service(p48,"granted_spanner_databases_setiampolicy") <<permission>>
+Rel_Association(b3,p48)
+Business_Object(o48,"->") <<op>>
+Rel_Access_w(p48,o48)
+Rel_Access_w(o48,r33)
+Rel_Access_w(o48,p20)
+Application_Service(p49,"granted_spanner_databases_update") <<permission>>
+Rel_Association(b3,p49)
+Business_Object(o49,"->") <<op>>
+Rel_Access_w(p49,o49)
+Rel_Access_w(o49,r33)
+Rel_Access_w(o49,p21)
+Application_Service(p50,"granted_spanner_databases_updateddl") <<permission>>
+Rel_Association(b3,p50)
+Business_Object(o50,"->") <<op>>
+Rel_Access_w(p50,o50)
+Rel_Access_w(o50,r33)
+Rel_Access_w(o50,p22)
+Application_Service(p51,"granted_spanner_databases_userolebasedaccess") <<permission>>
+Rel_Association(b3,p51)
+Business_Object(o51,"->") <<op>>
+Rel_Access_w(p51,o51)
+Rel_Access_w(o51,r33)
+Rel_Access_w(o51,p23)
+Application_Service(p52,"granted_spanner_databases_write") <<permission>>
+Rel_Association(b3,p52)
+Business_Object(o52,"->") <<op>>
+Rel_Access_w(p52,o52)
+Rel_Access_w(o52,r33)
+Rel_Access_w(o52,p24)
+Application_Service(p53,"granted_spanner_sessions_create") <<permission>>
+Rel_Association(b3,p53)
+Business_Object(o53,"->") <<op>>
+Rel_Access_w(p53,o53)
+Rel_Access_w(o53,r33)
+Rel_Access_w(o53,p28)
+Application_Service(p54,"granted_spanner_sessions_delete") <<permission>>
+Rel_Association(b3,p54)
+Business_Object(o54,"->") <<op>>
+Rel_Access_w(p54,o54)
+Rel_Access_w(o54,r33)
+Rel_Access_w(o54,p29)
+Application_Service(p55,"granted_spanner_sessions_get") <<permission>>
+Rel_Association(b3,p55)
+Business_Object(o55,"->") <<op>>
+Rel_Access_w(p55,o55)
+Rel_Access_w(o55,r33)
+Rel_Access_w(o55,p30)
+Application_Service(p56,"granted_spanner_sessions_list") <<permission>>
+Rel_Association(b3,p56)
+Business_Object(o56,"->") <<op>>
+Rel_Access_w(p56,o56)
+Rel_Access_w(o56,r33)
+Rel_Access_w(o56,p31)
+Application_Service(p57,"granted_spanner_databaseoperations_cancel") <<permission>>
+Rel_Association(b3,p57)
+Business_Object(o57,"->") <<op>>
+Rel_Access_w(p57,o57)
+Rel_Access_w(o57,r33)
+Rel_Access_w(o57,p1)
+Application_Service(p58,"granted_spanner_databaseoperations_delete") <<permission>>
+Rel_Association(b3,p58)
+Business_Object(o58,"->") <<op>>
+Rel_Access_w(p58,o58)
+Rel_Access_w(o58,r33)
+Rel_Access_w(o58,p2)
+Application_Service(p59,"granted_spanner_databaseoperations_get") <<permission>>
+Rel_Association(b3,p59)
+Business_Object(o59,"->") <<op>>
+Rel_Access_w(p59,o59)
+Rel_Access_w(o59,r33)
+Rel_Access_w(o59,p3)
+Application_Service(p60,"granted_spanner_databaseoperations_list") <<permission>>
+Rel_Association(b3,p60)
+Business_Object(o60,"->") <<op>>
+Rel_Access_w(p60,o60)
+Rel_Access_w(o60,r33)
+Rel_Access_w(o60,p4)
+Application_Service(p61,"granted_spanner_databaseroles_list") <<permission>>
+Rel_Association(b3,p61)
+Business_Object(o61,"->") <<op>>
+Rel_Access_w(p61,o61)
+Rel_Access_w(o61,r33)
+Rel_Access_w(o61,p5)
+Application_Service(p62,"granted_spanner_databaseroles_use") <<permission>>
+Rel_Association(b3,p62)
+Business_Object(o62,"->") <<op>>
+Rel_Access_w(p62,o62)
+Rel_Access_w(o62,r33)
+Rel_Access_w(o62,p6)
+Application_Service(p63,"get") <<permission>>
+Rel_Association(b4,p63)
+Business_Object(o63,"->") <<op>>
+Rel_Access_w(p63,o63)
+Rel_Access_w(o63,r35)
+Rel_Access_w(o63,p25)
+Application_Service(p64,"getiampolicy") <<permission>>
+Rel_Association(b4,p64)
+Business_Object(o66,"->") <<op>>
+Rel_Access_w(p64,o66)
+Rel_Access_w(o66,r35)
+Rel_Access_w(o66,p26)
+Application_Service(p65,"list") <<permission>>
+Rel_Association(b4,p65)
+Business_Object(o69,"->") <<op>>
+Rel_Access_w(p65,o69)
+Rel_Access_w(o69,r35)
+Rel_Access_w(o69,p27)
+Application_Service(p66,"granted_spanner_databases_beginorrollbackreadwritetransaction") <<permission>>
+Rel_Association(b4,p66)
+Business_Object(o72,"->") <<op>>
+Rel_Access_w(p66,o72)
+Rel_Access_w(o72,r35)
+Rel_Access_w(o72,p7)
+Application_Service(p67,"granted_spanner_databases_beginpartitioneddmltransaction") <<permission>>
+Rel_Association(b4,p67)
+Business_Object(o75,"->") <<op>>
+Rel_Access_w(p67,o75)
+Rel_Access_w(o75,r35)
+Rel_Access_w(o75,p8)
+Application_Service(p68,"granted_spanner_databases_beginreadonlytransaction") <<permission>>
+Rel_Association(b4,p68)
+Business_Object(o78,"->") <<op>>
+Rel_Access_w(p68,o78)
+Rel_Access_w(o78,r35)
+Rel_Access_w(o78,p9)
+Application_Service(p69,"granted_spanner_databases_create") <<permission>>
+Rel_Association(b4,p69)
+Business_Object(o81,"->") <<op>>
+Rel_Access_w(p69,o81)
+Rel_Access_w(o81,r35)
+Rel_Access_w(o81,p10)
+Application_Service(p70,"granted_spanner_databases_drop") <<permission>>
+Rel_Association(b4,p70)
+Business_Object(o84,"->") <<op>>
+Rel_Access_w(p70,o84)
+Rel_Access_w(o84,r35)
+Rel_Access_w(o84,p11)
+Application_Service(p71,"granted_spanner_databases_get") <<permission>>
+Rel_Association(b4,p71)
+Business_Object(o87,"->") <<op>>
+Rel_Access_w(p71,o87)
+Rel_Access_w(o87,r35)
+Rel_Access_w(o87,p12)
+Application_Service(p72,"granted_spanner_databases_getddl") <<permission>>
+Rel_Association(b4,p72)
+Business_Object(o90,"->") <<op>>
+Rel_Access_w(p72,o90)
+Rel_Access_w(o90,r35)
+Rel_Access_w(o90,p13)
+Application_Service(p73,"granted_spanner_databases_getiampolicy") <<permission>>
+Rel_Association(b4,p73)
+Business_Object(o93,"->") <<op>>
+Rel_Access_w(p73,o93)
+Rel_Access_w(o93,r35)
+Rel_Access_w(o93,p14)
+Application_Service(p74,"granted_spanner_databases_list") <<permission>>
+Rel_Association(b4,p74)
+Business_Object(o96,"->") <<op>>
+Rel_Access_w(p74,o96)
+Rel_Access_w(o96,r35)
+Rel_Access_w(o96,p15)
+Application_Service(p75,"granted_spanner_databases_partitionquery") <<permission>>
+Rel_Association(b4,p75)
+Business_Object(o99,"->") <<op>>
+Rel_Access_w(p75,o99)
+Rel_Access_w(o99,r35)
+Rel_Access_w(o99,p16)
+Application_Service(p76,"granted_spanner_databases_partitionread") <<permission>>
+Rel_Association(b4,p76)
+Business_Object(o102,"->") <<op>>
+Rel_Access_w(p76,o102)
+Rel_Access_w(o102,r35)
+Rel_Access_w(o102,p17)
+Application_Service(p77,"granted_spanner_databases_read") <<permission>>
+Rel_Association(b4,p77)
+Business_Object(o105,"->") <<op>>
+Rel_Access_w(p77,o105)
+Rel_Access_w(o105,r35)
+Rel_Access_w(o105,p18)
+Application_Service(p78,"granted_spanner_databases_select") <<permission>>
+Rel_Association(b4,p78)
+Business_Object(o108,"->") <<op>>
+Rel_Access_w(p78,o108)
+Rel_Access_w(o108,r35)
+Rel_Access_w(o108,p19)
+Application_Service(p79,"granted_spanner_databases_setiampolicy") <<permission>>
+Rel_Association(b4,p79)
+Business_Object(o111,"->") <<op>>
+Rel_Access_w(p79,o111)
+Rel_Access_w(o111,r35)
+Rel_Access_w(o111,p20)
+Application_Service(p80,"granted_spanner_databases_update") <<permission>>
+Rel_Association(b4,p80)
+Business_Object(o114,"->") <<op>>
+Rel_Access_w(p80,o114)
+Rel_Access_w(o114,r35)
+Rel_Access_w(o114,p21)
+Application_Service(p81,"granted_spanner_databases_updateddl") <<permission>>
+Rel_Association(b4,p81)
+Business_Object(o117,"->") <<op>>
+Rel_Access_w(p81,o117)
+Rel_Access_w(o117,r35)
+Rel_Access_w(o117,p22)
+Application_Service(p82,"granted_spanner_databases_userolebasedaccess") <<permission>>
+Rel_Association(b4,p82)
+Business_Object(o120,"->") <<op>>
+Rel_Access_w(p82,o120)
+Rel_Access_w(o120,r35)
+Rel_Access_w(o120,p23)
+Application_Service(p83,"granted_spanner_databases_write") <<permission>>
+Rel_Association(b4,p83)
+Business_Object(o123,"->") <<op>>
+Rel_Access_w(p83,o123)
+Rel_Access_w(o123,r35)
+Rel_Access_w(o123,p24)
+Application_Service(p84,"granted_spanner_sessions_create") <<permission>>
+Rel_Association(b4,p84)
+Business_Object(o126,"->") <<op>>
+Rel_Access_w(p84,o126)
+Rel_Access_w(o126,r35)
+Rel_Access_w(o126,p28)
+Application_Service(p85,"granted_spanner_sessions_delete") <<permission>>
+Rel_Association(b4,p85)
+Business_Object(o129,"->") <<op>>
+Rel_Access_w(p85,o129)
+Rel_Access_w(o129,r35)
+Rel_Access_w(o129,p29)
+Application_Service(p86,"granted_spanner_sessions_get") <<permission>>
+Rel_Association(b4,p86)
+Business_Object(o132,"->") <<op>>
+Rel_Access_w(p86,o132)
+Rel_Access_w(o132,r35)
+Rel_Access_w(o132,p30)
+Application_Service(p87,"granted_spanner_sessions_list") <<permission>>
+Rel_Association(b4,p87)
+Business_Object(o135,"->") <<op>>
+Rel_Access_w(p87,o135)
+Rel_Access_w(o135,r35)
+Rel_Access_w(o135,p31)
+Application_Service(p88,"granted_spanner_databaseoperations_cancel") <<permission>>
+Rel_Association(b4,p88)
+Business_Object(o138,"->") <<op>>
+Rel_Access_w(p88,o138)
+Rel_Access_w(o138,r35)
+Rel_Access_w(o138,p1)
+Application_Service(p89,"granted_spanner_databaseoperations_delete") <<permission>>
+Rel_Association(b4,p89)
+Business_Object(o141,"->") <<op>>
+Rel_Access_w(p89,o141)
+Rel_Access_w(o141,r35)
+Rel_Access_w(o141,p2)
+Application_Service(p90,"granted_spanner_databaseoperations_get") <<permission>>
+Rel_Association(b4,p90)
+Business_Object(o144,"->") <<op>>
+Rel_Access_w(p90,o144)
+Rel_Access_w(o144,r35)
+Rel_Access_w(o144,p3)
+Application_Service(p91,"granted_spanner_databaseoperations_list") <<permission>>
+Rel_Association(b4,p91)
+Business_Object(o147,"->") <<op>>
+Rel_Access_w(p91,o147)
+Rel_Access_w(o147,r35)
+Rel_Access_w(o147,p4)
+Application_Service(p92,"granted_spanner_databaseroles_list") <<permission>>
+Rel_Association(b4,p92)
+Business_Object(o150,"->") <<op>>
+Rel_Access_w(p92,o150)
+Rel_Access_w(o150,r35)
+Rel_Access_w(o150,p5)
+Application_Service(p93,"granted_spanner_databaseroles_use") <<permission>>
+Rel_Association(b4,p93)
+Business_Object(o153,"->") <<op>>
+Rel_Access_w(p93,o153)
+Rel_Access_w(o153,r35)
+Rel_Access_w(o153,p6)
+Application_Service(p94,"beginorrollbackreadwritetransaction") <<permission>>
+Rel_Association(b5,p94)
+Business_Object(o156,"->") <<op>>
+Rel_Access_w(p94,o156)
+Rel_Access_w(o156,r37)
+Rel_Access_w(o156,p7)
+Application_Service(p95,"beginpartitioneddmltransaction") <<permission>>
+Rel_Association(b5,p95)
+Business_Object(o159,"->") <<op>>
+Rel_Access_w(p95,o159)
+Rel_Access_w(o159,r37)
+Rel_Access_w(o159,p8)
+Application_Service(p96,"beginreadonlytransaction") <<permission>>
+Rel_Association(b5,p96)
+Business_Object(o162,"->") <<op>>
+Rel_Access_w(p96,o162)
+Rel_Access_w(o162,r37)
+Rel_Access_w(o162,p9)
+Application_Service(p97,"create") <<permission>>
+Rel_Association(b5,p97)
+Business_Object(o165,"->") <<op>>
+Rel_Access_w(p97,o165)
+Rel_Access_w(o165,r37)
+Rel_Access_w(o165,p10)
+Application_Service(p98,"drop") <<permission>>
+Rel_Association(b5,p98)
+Business_Object(o168,"->") <<op>>
+Rel_Access_w(p98,o168)
+Rel_Access_w(o168,r37)
+Rel_Access_w(o168,p11)
+Application_Service(p99,"get") <<permission>>
+Rel_Association(b5,p99)
+Business_Object(o171,"->") <<op>>
+Rel_Access_w(p99,o171)
+Rel_Access_w(o171,r37)
+Rel_Access_w(o171,p12)
+Application_Service(p100,"get_ddl") <<permission>>
+Rel_Association(b5,p100)
+Business_Object(o174,"->") <<op>>
+Rel_Access_w(p100,o174)
+Rel_Access_w(o174,r37)
+Rel_Access_w(o174,p13)
+Application_Service(p101,"getiampolicy") <<permission>>
+Rel_Association(b5,p101)
+Business_Object(o177,"->") <<op>>
+Rel_Access_w(p101,o177)
+Rel_Access_w(o177,r37)
+Rel_Access_w(o177,p14)
+Application_Service(p102,"list") <<permission>>
+Rel_Association(b5,p102)
+Business_Object(o180,"->") <<op>>
+Rel_Access_w(p102,o180)
+Rel_Access_w(o180,r37)
+Rel_Access_w(o180,p15)
+Application_Service(p103,"partitionquery") <<permission>>
+Rel_Association(b5,p103)
+Business_Object(o183,"->") <<op>>
+Rel_Access_w(p103,o183)
+Rel_Access_w(o183,r37)
+Rel_Access_w(o183,p16)
+Application_Service(p104,"partitionread") <<permission>>
+Rel_Association(b5,p104)
+Business_Object(o186,"->") <<op>>
+Rel_Access_w(p104,o186)
+Rel_Access_w(o186,r37)
+Rel_Access_w(o186,p17)
+Application_Service(p105,"read") <<permission>>
+Rel_Association(b5,p105)
+Business_Object(o189,"->") <<op>>
+Rel_Access_w(p105,o189)
+Rel_Access_w(o189,r37)
+Rel_Access_w(o189,p18)
+Application_Service(p106,"select") <<permission>>
+Rel_Association(b5,p106)
+Business_Object(o192,"->") <<op>>
+Rel_Access_w(p106,o192)
+Rel_Access_w(o192,r37)
+Rel_Access_w(o192,p19)
+Application_Service(p107,"setiampolicy") <<permission>>
+Rel_Association(b5,p107)
+Business_Object(o195,"->") <<op>>
+Rel_Access_w(p107,o195)
+Rel_Access_w(o195,r37)
+Rel_Access_w(o195,p20)
+Application_Service(p108,"update") <<permission>>
+Rel_Association(b5,p108)
+Business_Object(o198,"->") <<op>>
+Rel_Access_w(p108,o198)
+Rel_Access_w(o198,r37)
+Rel_Access_w(o198,p21)
+Application_Service(p109,"updateddl") <<permission>>
+Rel_Association(b5,p109)
+Business_Object(o201,"->") <<op>>
+Rel_Access_w(p109,o201)
+Rel_Access_w(o201,r37)
+Rel_Access_w(o201,p22)
+Application_Service(p110,"userolebasedaccess") <<permission>>
+Rel_Association(b5,p110)
+Business_Object(o204,"->") <<op>>
+Rel_Access_w(p110,o204)
+Rel_Access_w(o204,r37)
+Rel_Access_w(o204,p23)
+Application_Service(p111,"write") <<permission>>
+Rel_Association(b5,p111)
+Business_Object(o207,"->") <<op>>
+Rel_Access_w(p111,o207)
+Rel_Access_w(o207,r37)
+Rel_Access_w(o207,p24)
+Application_Service(p112,"create_session") <<permission>>
+Rel_Association(b5,p112)
+Business_Object(o210,"->") <<op>>
+Rel_Access_w(p112,o210)
+Rel_Access_w(o210,r37)
+Rel_Access_w(o210,p28)
+Application_Service(p113,"delete_session") <<permission>>
+Rel_Association(b5,p113)
+Business_Object(o213,"->") <<op>>
+Rel_Access_w(p113,o213)
+Rel_Access_w(o213,r37)
+Rel_Access_w(o213,p29)
+Application_Service(p114,"get_session") <<permission>>
+Rel_Association(b5,p114)
+Business_Object(o216,"->") <<op>>
+Rel_Access_w(p114,o216)
+Rel_Access_w(o216,r37)
+Rel_Access_w(o216,p30)
+Application_Service(p115,"list_sessions") <<permission>>
+Rel_Association(b5,p115)
+Business_Object(o219,"->") <<op>>
+Rel_Access_w(p115,o219)
+Rel_Access_w(o219,r37)
+Rel_Access_w(o219,p31)
+Application_Service(p116,"cancel_operation") <<permission>>
+Rel_Association(b5,p116)
+Business_Object(o222,"->") <<op>>
+Rel_Access_w(p116,o222)
+Rel_Access_w(o222,r37)
+Rel_Access_w(o222,p1)
+Application_Service(p117,"delete_operation") <<permission>>
+Rel_Association(b5,p117)
+Business_Object(o225,"->") <<op>>
+Rel_Access_w(p117,o225)
+Rel_Access_w(o225,r37)
+Rel_Access_w(o225,p2)
+Application_Service(p118,"get_operation") <<permission>>
+Rel_Association(b5,p118)
+Business_Object(o228,"->") <<op>>
+Rel_Access_w(p118,o228)
+Rel_Access_w(o228,r37)
+Rel_Access_w(o228,p3)
+Application_Service(p119,"list_operations") <<permission>>
+Rel_Association(b5,p119)
+Business_Object(o231,"->") <<op>>
+Rel_Access_w(p119,o231)
+Rel_Access_w(o231,r37)
+Rel_Access_w(o231,p4)
+Application_Service(p120,"list_roles") <<permission>>
+Rel_Association(b5,p120)
+Business_Object(o234,"->") <<op>>
+Rel_Access_w(p120,o234)
+Rel_Access_w(o234,r37)
+Rel_Access_w(o234,p5)
+Application_Service(p121,"use_role") <<permission>>
+Rel_Association(b5,p121)
+Business_Object(o237,"->") <<op>>
+Rel_Access_w(p121,o237)
+Rel_Access_w(o237,r37)
+Rel_Access_w(o237,p6)
+@enduml

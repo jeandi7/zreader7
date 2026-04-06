@@ -1,0 +1,12 @@
+definition user { } 
+
+definition document {
+    relation reader: user:*
+    relation member: user
+}
+
+definition group { 
+    relation reader: user
+    permission reader = reader
+}  
+

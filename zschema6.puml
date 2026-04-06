@@ -1,0 +1,22 @@
+@startuml zschema6
+!include <archimate/Archimate>
+scale 0.15
+skinparam dpi 300
+Business_Object(b1,"user")
+Business_Object(b2,"resource")
+Business_Object(b3,"usergroup")
+Business_Object(r1,"manager") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Business_Object(r2,"viewer") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b1)
+Business_Object(r3,"manager") <<relation>>
+Rel_Association(b3,r3)
+Rel_Access_w(r3,b1)
+Business_Object(r4,"member") <<relation>>
+Rel_Association(b3,r4)
+Rel_Access_w(r4,b1)
+Rel_Access_w(r4,r1,"usergroup#member")
+rectangle "  usergroup#member declared more that one in relation manager of definition resource "  #red
+@enduml

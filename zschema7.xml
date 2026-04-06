@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.opengroup.org/xsd/archimate/3.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengroup.org/xsd/archimate/3.0/ http://www.opengroup.org/xsd/archimate/3.1/archimate3_Diagram.xsd http://purl.org/dc/elements/1.1/ http://www.opengroup.org/xsd/archimate/3.1/dc.xsd" identifier="zanzibar-archimate">
+  <name xml:lang="fr">zschema7</name>
+  <metadata>
+    <schema>Dublin Core</schema>
+    <schemaversion>1.1</schemaversion>
+    <dc:creator>zreader</dc:creator>
+  </metadata>
+  <elements>
+    <element identifier="b1" xsi:type="BusinessObject">
+      <name xml:lang="fr">user</name>
+    </element>
+    <element identifier="b2" xsi:type="BusinessObject">
+      <name xml:lang="fr">resource</name>
+    </element>
+    <element identifier="r1" xsi:type="BusinessObject">
+      <name xml:lang="fr">viewer</name>
+    </element>
+  </elements>
+  <relationships>
+    <relationship identifier="rel_1" source="b2" target="r1" xsi:type="Association">
+    </relationship>
+    <relationship identifier="rel_2" source="r1" target="b1" xsi:type="Access" accessType="Write">
+    </relationship>
+    <relationship identifier="rel_3" source="r1" target="b1" xsi:type="Access" accessType="Write">
+      <name xml:lang="fr">ALL</name>
+    </relationship>
+  </relationships>
+  <views>
+    <diagrams>
+      <view identifier="zanzibar-view" xsi:type="Diagram">
+        <name xml:lang="fr">zschema7_diagram</name>
+        <node identifier="node_b1" elementRef="b1" xsi:type="Element" x="80" y="80" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="node_b2" elementRef="b2" xsi:type="Element" x="240" y="80" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <node identifier="node_r1" elementRef="r1" xsi:type="Element" x="400" y="80" w="120" h="55">
+          <style>
+            <fillColor r="255" g="255" b="181" a="100" />
+            <lineColor r="92" g="92" b="92" a="100" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </node>
+        <connection identifier="conn_rel_1" relationshipRef="rel_1" xsi:type="Relationship" source="node_b2" target="node_r1">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="conn_rel_2" relationshipRef="rel_2" xsi:type="Relationship" source="node_r1" target="node_b1">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+        <connection identifier="conn_rel_3" relationshipRef="rel_3" xsi:type="Relationship" source="node_r1" target="node_b1">
+          <style>
+            <lineColor r="0" g="0" b="0" />
+            <font name="Segoe UI" size="9">
+              <color r="0" g="0" b="0" />
+            </font>
+          </style>
+        </connection>
+      </view>
+    </diagrams>
+  </views>
+</model>

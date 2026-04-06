@@ -1,0 +1,12 @@
+@startuml zschema4
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"document")
+Business_Object(r1,"reader") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+rectangle "relation reader is duplicated in definition document " #red
+rectangle "relation reader is duplicated in definition document " #red
+@enduml

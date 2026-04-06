@@ -1,0 +1,125 @@
+@startuml zschema8
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"role")
+Business_Object(b3,"role_binding")
+Business_Object(b4,"project")
+Business_Object(b5,"spanner_instance")
+Business_Object(b6,"spanner_database")
+Business_Object(r1,"spanner_databaseoperations_cancel") <<relation>>
+Rel_Association(b2,r1)
+Business_Object(r2,"spanner_databaseoperations_delete") <<relation>>
+Rel_Association(b2,r2)
+Business_Object(r3,"spanner_databaseoperations_get") <<relation>>
+Rel_Association(b2,r3)
+Business_Object(r4,"spanner_databaseoperations_list") <<relation>>
+Rel_Association(b2,r4)
+Business_Object(r5,"spanner_databaseroles_list") <<relation>>
+Rel_Association(b2,r5)
+Business_Object(r6,"spanner_databaseroles_use") <<relation>>
+Rel_Association(b2,r6)
+Business_Object(r7,"spanner_databases_beginorrollbackreadwritetransaction") <<relation>>
+Rel_Association(b2,r7)
+Business_Object(r8,"spanner_databases_beginpartitioneddmltransaction") <<relation>>
+Rel_Association(b2,r8)
+Business_Object(r9,"spanner_databases_beginreadonlytransaction") <<relation>>
+Rel_Association(b2,r9)
+Business_Object(r10,"spanner_databases_create") <<relation>>
+Rel_Association(b2,r10)
+Business_Object(r11,"spanner_databases_drop") <<relation>>
+Rel_Association(b2,r11)
+Business_Object(r12,"spanner_databases_get") <<relation>>
+Rel_Association(b2,r12)
+Business_Object(r13,"spanner_databases_getddl") <<relation>>
+Rel_Association(b2,r13)
+Business_Object(r14,"spanner_databases_getiampolicy") <<relation>>
+Rel_Association(b2,r14)
+Business_Object(r15,"spanner_databases_list") <<relation>>
+Rel_Association(b2,r15)
+Business_Object(r16,"spanner_databases_partitionquery") <<relation>>
+Rel_Association(b2,r16)
+Business_Object(r17,"spanner_databases_partitionread") <<relation>>
+Rel_Association(b2,r17)
+Business_Object(r18,"spanner_databases_read") <<relation>>
+Rel_Association(b2,r18)
+Business_Object(r19,"spanner_databases_select") <<relation>>
+Rel_Association(b2,r19)
+Business_Object(r20,"spanner_databases_setiampolicy") <<relation>>
+Rel_Association(b2,r20)
+Business_Object(r21,"spanner_databases_update") <<relation>>
+Rel_Association(b2,r21)
+Business_Object(r22,"spanner_databases_updateddl") <<relation>>
+Rel_Association(b2,r22)
+Business_Object(r23,"spanner_databases_userolebasedaccess") <<relation>>
+Rel_Association(b2,r23)
+Business_Object(r24,"spanner_databases_write") <<relation>>
+Rel_Association(b2,r24)
+Business_Object(r25,"spanner_instances_get") <<relation>>
+Rel_Association(b2,r25)
+Business_Object(r26,"spanner_instances_getiampolicy") <<relation>>
+Rel_Association(b2,r26)
+Business_Object(r27,"spanner_instances_list") <<relation>>
+Rel_Association(b2,r27)
+Business_Object(r28,"spanner_sessions_create") <<relation>>
+Rel_Association(b2,r28)
+Business_Object(r29,"spanner_sessions_delete") <<relation>>
+Rel_Association(b2,r29)
+Business_Object(r30,"spanner_sessions_get") <<relation>>
+Rel_Association(b2,r30)
+Business_Object(r31,"spanner_sessions_list") <<relation>>
+Rel_Association(b2,r31)
+Business_Object(r32,"user") <<relation>>
+Rel_Association(b3,r32)
+Rel_Access_w(r32,b1)
+Business_Object(r33,"role") <<relation>>
+Rel_Association(b3,r33)
+Rel_Access_w(r33,b2)
+Business_Object(r34,"granted") <<relation>>
+Rel_Association(b4,r34)
+Rel_Access_w(r34,b3)
+Business_Object(r35,"project") <<relation>>
+Rel_Association(b5,r35)
+Rel_Access_w(r35,b4)
+Business_Object(r36,"granted") <<relation>>
+Rel_Association(b5,r36)
+Rel_Access_w(r36,b3)
+Business_Object(r37,"instance") <<relation>>
+Rel_Association(b6,r37)
+Rel_Access_w(r37,b5)
+Business_Object(r38,"granted") <<relation>>
+Rel_Association(b6,r38)
+Rel_Access_w(r38,b3)
+Rel_Access_w(r1,b1,"ALL")
+Rel_Access_w(r2,b1,"ALL")
+Rel_Access_w(r3,b1,"ALL")
+Rel_Access_w(r4,b1,"ALL")
+Rel_Access_w(r5,b1,"ALL")
+Rel_Access_w(r6,b1,"ALL")
+Rel_Access_w(r7,b1,"ALL")
+Rel_Access_w(r8,b1,"ALL")
+Rel_Access_w(r9,b1,"ALL")
+Rel_Access_w(r10,b1,"ALL")
+Rel_Access_w(r11,b1,"ALL")
+Rel_Access_w(r12,b1,"ALL")
+Rel_Access_w(r13,b1,"ALL")
+Rel_Access_w(r14,b1,"ALL")
+Rel_Access_w(r15,b1,"ALL")
+Rel_Access_w(r16,b1,"ALL")
+Rel_Access_w(r17,b1,"ALL")
+Rel_Access_w(r18,b1,"ALL")
+Rel_Access_w(r19,b1,"ALL")
+Rel_Access_w(r20,b1,"ALL")
+Rel_Access_w(r21,b1,"ALL")
+Rel_Access_w(r22,b1,"ALL")
+Rel_Access_w(r23,b1,"ALL")
+Rel_Access_w(r24,b1,"ALL")
+Rel_Access_w(r25,b1,"ALL")
+Rel_Access_w(r26,b1,"ALL")
+Rel_Access_w(r27,b1,"ALL")
+Rel_Access_w(r28,b1,"ALL")
+Rel_Access_w(r29,b1,"ALL")
+Rel_Access_w(r30,b1,"ALL")
+Rel_Access_w(r31,b1,"ALL")
+@enduml

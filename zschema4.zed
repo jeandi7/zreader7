@@ -1,0 +1,8 @@
+definition user { } 
+
+definition document {
+    relation reader: user 
+    relation reader: user 
+    relation reader: user 
+}
+

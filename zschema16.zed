@@ -1,0 +1,6 @@
+definition user {}
+definition bot {}
+ 
+definition document {
+  relation reader: user | bot
+}

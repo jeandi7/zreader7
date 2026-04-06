@@ -1,0 +1,56 @@
+definition user {}
+ 
+definition role {
+    relation spanner_databaseoperations_cancel: user:*
+    relation spanner_databaseoperations_delete: user:*
+    relation spanner_databaseoperations_get: user:*
+    relation spanner_databaseoperations_list: user:*
+    relation spanner_databaseroles_list: user:*
+    relation spanner_databaseroles_use: user:*
+    relation spanner_databases_beginorrollbackreadwritetransaction: user:*
+    relation spanner_databases_beginpartitioneddmltransaction: user:*
+    relation spanner_databases_beginreadonlytransaction: user:*
+    relation spanner_databases_create: user:*
+    relation spanner_databases_drop: user:*
+    relation spanner_databases_get: user:*
+    relation spanner_databases_getddl: user:*
+    relation spanner_databases_getiampolicy: user:*
+    relation spanner_databases_list: user:*
+    relation spanner_databases_partitionquery: user:*
+    relation spanner_databases_partitionread: user:*
+    relation spanner_databases_read: user:*
+    relation spanner_databases_select: user:*
+    relation spanner_databases_setiampolicy: user:*
+    relation spanner_databases_update: user:*
+    relation spanner_databases_updateddl: user:*
+    relation spanner_databases_userolebasedaccess: user:*
+    relation spanner_databases_write: user:*
+    relation spanner_instances_get: user:*
+    relation spanner_instances_getiampolicy: user:*
+    relation spanner_instances_list: user:*
+    relation spanner_sessions_create: user:*
+    relation spanner_sessions_delete: user:*
+    relation spanner_sessions_get: user:*
+    relation spanner_sessions_list: user:*
+}
+
+definition role_binding {
+    relation user: user
+    relation role: role
+
+}
+
+definition project {
+    relation granted: role_binding
+}
+
+definition spanner_instance {
+    relation project: project
+    relation granted: role_binding
+}
+
+definition spanner_database {
+    relation instance: spanner_instance
+    relation granted: role_binding
+}
+

@@ -1,0 +1,75 @@
+@startuml zschema10
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"resource")
+Business_Object(b3,"usergroup")
+Business_Object(b4,"organization")
+Business_Object(r1,"manager") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Business_Object(r2,"viewer") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b1)
+Business_Object(r3,"manager") <<relation>>
+Rel_Association(b3,r3)
+Rel_Access_w(r3,b1)
+Business_Object(r4,"direct_member") <<relation>>
+Rel_Association(b3,r4)
+Rel_Access_w(r4,b1)
+Business_Object(r5,"group") <<relation>>
+Rel_Association(b4,r5)
+Rel_Access_w(r5,b3)
+Business_Object(r6,"administrator") <<relation>>
+Rel_Association(b4,r6)
+Rel_Access_w(r6,b1)
+Business_Object(r7,"direct_member") <<relation>>
+Rel_Association(b4,r7)
+Rel_Access_w(r7,b1)
+Business_Object(r8,"resource") <<relation>>
+Rel_Association(b4,r8)
+Rel_Access_w(r8,b2)
+Application_Service(p1,"manage") <<permission>>
+Rel_Association(b2,p1)
+Rel_Access_w(p1,r1)
+Application_Service(p2,"view") <<permission>>
+Rel_Association(b2,p2)
+Business_Object(o1,"+") <<op>>
+Rel_Access_w(p2,o1)
+Rel_Access_w(o1,r2)
+Rel_Access_w(o1,r1)
+Application_Service(p3,"member") <<permission>>
+Rel_Association(b3,p3)
+Business_Object(o2,"+") <<op>>
+Rel_Access_w(p3,o2)
+Rel_Access_w(o2,r4)
+Rel_Access_w(o2,r3)
+Application_Service(p4,"admin") <<permission>>
+Rel_Association(b4,p4)
+Rel_Access_w(p4,r6)
+Application_Service(p5,"member") <<permission>>
+Rel_Association(b4,p5)
+Business_Object(o3,"+") <<op>>
+Rel_Access_w(p5,o3)
+Rel_Access_w(o3,r7)
+Rel_Access_w(o3,r6)
+Business_Object(o4,"+") <<op>>
+Rel_Access_w(o3,o4)
+Rel_Access_w(o4,r6)
+Rel_Access_w(o4,r5)
+Business_Object(o5,"->") <<op>>
+Rel_Access_w(o4,o5)
+Rel_Access_w(o5,r5)
+Rel_Access_w(o5,p3)
+Rel_Access_w(r1,p3,"usergroup#member")
+Rel_Access_w(r1,r3,"usergroup#manager")
+Rel_Access_w(r2,p3,"usergroup#member")
+Rel_Access_w(r2,r3,"usergroup#manager")
+Rel_Access_w(r3,p3,"usergroup#member")
+Rel_Access_w(r3,r3,"usergroup#manager")
+Rel_Access_w(r4,p3,"usergroup#member")
+Rel_Access_w(r4,r3,"usergroup#manager")
+Rel_Access_w(r6,p3,"usergroup#member")
+Rel_Access_w(r6,r3,"usergroup#manager")
+@enduml

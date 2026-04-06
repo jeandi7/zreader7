@@ -1,0 +1,20 @@
+@startuml zschema15
+!include <archimate/Archimate>
+scale 1.0
+skinparam dpi 96
+Business_Object(b1,"user")
+Business_Object(b2,"document")
+Business_Object(b3,"group")
+Business_Object(r1,"reader") <<relation>>
+Rel_Association(b2,r1)
+Business_Object(r2,"member") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b1)
+Business_Object(r3,"reader") <<relation>>
+Rel_Association(b3,r3)
+Rel_Access_w(r3,b1)
+Business_Object(p1,"reader") <<permission>>
+Rel_Association(b3,p1)
+Rel_Access_w(p1,r3)
+Rel_Access_w(r1,b1,"ALL")
+@enduml

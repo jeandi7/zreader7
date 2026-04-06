@@ -1,0 +1,44 @@
+@startuml googledoc2
+!include <archimate/Archimate>
+Business_Object(b1,"user")
+Business_Object(b2,"resource")
+Business_Object(b3,"usergroup")
+Business_Object(b4,"organization")
+Business_Object(r1,"manager") <<relation>>
+Rel_Association(b2,r1)
+Rel_Access_w(r1,b1)
+Business_Object(r2,"viewer") <<relation>>
+Rel_Association(b2,r2)
+Rel_Access_w(r2,b1)
+Business_Object(r3,"manager") <<relation>>
+Rel_Association(b3,r3)
+Rel_Access_w(r3,b1)
+Business_Object(r4,"direct_member") <<relation>>
+Rel_Association(b3,r4)
+Rel_Access_w(r4,b1)
+Business_Object(r5,"member") <<relation>>
+Rel_Association(b3,r5)
+Rel_Access_w(r5,b1)
+Business_Object(r6,"group") <<relation>>
+Rel_Association(b4,r6)
+Rel_Access_w(r6,b3)
+Business_Object(r7,"administrator") <<relation>>
+Rel_Association(b4,r7)
+Rel_Access_w(r7,b1)
+Business_Object(r8,"direct_member") <<relation>>
+Rel_Association(b4,r8)
+Rel_Access_w(r8,b1)
+Business_Object(r9,"resource") <<relation>>
+Rel_Association(b4,r9)
+Rel_Access_w(r9,b2)
+Rel_Access_w(r5,r1,"usergroup#member")
+Rel_Access_w(r3,r1,"usergroup#manager")
+Rel_Access_w(r5,r2,"usergroup#member")
+Rel_Access_w(r3,r2,"usergroup#manager")
+Rel_Access_w(r5,r3,"usergroup#member")
+Rel_Access_w(r3,r3,"usergroup#manager")
+Rel_Access_w(r5,r4,"usergroup#member")
+Rel_Access_w(r3,r4,"usergroup#manager")
+Rel_Access_w(r5,r7,"usergroup#member")
+Rel_Access_w(r3,r7,"usergroup#manager")
+@enduml
