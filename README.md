@@ -1,5 +1,8 @@
 # Zanzibar SpiceDB-like Reader + PlantUML and Open Group ArchiMate® Model Exchange Generation Code  in less than 1700 lines of golang : part VII
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 This part follows parts I to VI from the Zanzibar SpiceDB-like Reader.
 
 Part V integrates the permission feature, and Part VI integrates the drawing generation (semantic part) for PlantUML only.
